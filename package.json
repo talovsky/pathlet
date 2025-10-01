@@ -1,0 +1,52 @@
+{
+  "name": "edt",
+  "displayName": "edt",
+  "author": {
+    "name": "Nika Gossamer"
+  },
+  "description": "use cmd+alt+p to list open editors, cmd+ctrl+p to quick open file path",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "edt.edt",
+        "title": "Show opened editors"
+      },
+      {
+        "command": "edt.path",
+        "title": "Show Quick Open with the path of the current editor"
+      }
+    ],
+    "keybindings": [
+      {
+        "mac": "alt+cmd+p",
+        "command": "edt.edt"
+      },
+      {
+        "mac": "ctrl+cmd+p",
+        "command": "edt.path"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.104.0",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.34.0",
+    "typescript": "^5.9.2"
+  }
+}
