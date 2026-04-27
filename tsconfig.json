@@ -1,11 +1,19 @@
 {
-  "compilerOptions": {
-    "module": "Node16",
-    "target": "ES2022",
-    "outDir": "out",
-    "lib": ["ES2022"],
-    "sourceMap": true,
-    "rootDir": "src",
-    "strict": true
-  }
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"target": "ES2022",
+		"lib": ["ES2022"],
+		"types": ["node", "vscode"],
+		"sourceMap": true,
+		"rootDir": "src",
+		"outDir": "out",
+		"noEmit": false,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"noFallthroughCasesInSwitch": true
+	},
+	"exclude": ["node_modules", ".vscode-test", "out"],
+	"include": ["src/**/*.ts"]
 }
