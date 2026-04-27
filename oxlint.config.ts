@@ -18,16 +18,11 @@ export default defineConfig({
 		"unicorn/no-null": "off",
 		"eslint/guard-for-in": "off",
 		"eslint/curly": "off",
-		"eslint/max-params": [
-			"off",
-			{
-				max: 5
-			}
-		]
+		"eslint/max-params": ["off", { max: 5 } ]
 	},
 	env: {
 		builtin: true
 	},
 	settings: {},
-	ignorePatterns: ["node_modules", "out", "src/test/fixtures"]
+	ignorePatterns: ["node_modules", "out", "*.lock", "dist"]
 });

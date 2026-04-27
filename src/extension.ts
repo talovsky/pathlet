@@ -4,10 +4,11 @@ import * as vscode from "vscode";
 
 export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
-		vscode.commands.registerCommand("edt.edt", async () => {
+		vscode.commands.registerCommand("pathlet.opened", async () => {
 			vscode.commands.executeCommand("workbench.action.quickOpen", "edt ");
 		}),
-		vscode.commands.registerCommand("edt.path", async () => {
+
+		vscode.commands.registerCommand("pathlet.pwd", async () => {
 			const editor = vscode.window.activeTextEditor;
 
 			let p = "";

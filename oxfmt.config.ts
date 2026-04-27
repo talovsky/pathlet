@@ -6,5 +6,5 @@ export default defineConfig({
 	trailingComma: "none",
 	printWidth: 120,
 	sortImports: true,
-	ignorePatterns: ["node_modules", "out"]
+	ignorePatterns: ["node_modules", "out", "*.lock", "dist"]
 });

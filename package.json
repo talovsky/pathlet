@@ -1,8 +1,8 @@
 {
-	"name": "edt",
-	"displayName": "edt",
-	"version": "0.0.1",
-	"description": "use cmd+alt+p to list open editors, cmd+ctrl+p to quick open file path",
+	"name": "pathlet",
+	"displayName": "Pathlet",
+	"version": "1.0.0",
+	"description": "Ditch tabs and use Quick Open to navigate between opened editors and the file system",
 	"categories": [
 		"Other"
 	],
@@ -11,16 +11,22 @@
 	},
 	"type": "module",
 	"main": "./out/extension.js",
+	"publisher": "talovsky",
+		"repository": {
+		"type": "git",
+		"url": "https://github.com/talovsky/pathlet.git"
+	},
+	"icon": "./pathlet.png",
+
 	"scripts": {
 		"vscode:prepublish": "bun run build",
-		"build": "bun run clean && tsc -p ./",
-		"clean": "rm -rf out",
+		"build": "rm -rf out && tsc -p ./",
 		"watch": "tsc -p ./ --watch",
 		"lint": "oxfmt && oxlint"
 	},
 	"devDependencies": {
 		"@types/node": "^25.6.0",
-		"@types/vscode": "^1.104.0",
+		"@types/vscode": "^1.100.0",
 		"oxfmt": "^0.46.0",
 		"oxlint": "^1.61.0",
 		"typescript": "^6"
@@ -28,29 +34,29 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "edt.edt",
+				"command": "pathlet.opened",
 				"title": "Show opened editors"
 			},
 			{
-				"command": "edt.path",
+				"command": "pathlet.pwd",
 				"title": "Show Quick Open with the path of the current editor"
 			}
 		],
 		"keybindings": [
 			{
-				"key": "alt+cmd+p",
+				"key": "alt+ctrl+p",
 				"mac": "alt+cmd+p",
-				"command": "edt.edt"
+				"command": "pathlet.opened"
 			},
 			{
-				"key": "ctrl+cmd+p",
+				"key": "ctrl+ctrl+p",
 				"mac": "ctrl+cmd+p",
-				"command": "edt.path"
+				"command": "pathlet.pwd"
 			}
 		]
 	},
 	"activationEvents": [],
 	"engines": {
-		"vscode": "^1.104.0"
+		"vscode": "^1.100.0"
 	}
 }
