@@ -18,7 +18,6 @@ Opens Quick Open pre-filled with the directory of the file you're editing, so yo
 
 I don't like tabs.
 
-
 ## Installation
 
 Search for **Pathlet** in the VS Code extension marketplace, or install via the CLI:
@@ -29,9 +28,9 @@ code --install-extension talovsky.pathlet
 
 ## Keybindings
 
-| Command | Mac | Windows / Linux |
-|---|---|---|
-| Show opened editors | `alt+cmd+p` | `alt+ctrl+p` |
-| Quick Open at current directory | `ctrl+cmd+p` | `ctrl+ctrl+p` |
+| Command                         | Mac          | Windows / Linux |
+| ------------------------------- | ------------ | --------------- |
+| Show opened editors             | `alt+cmd+p`  | `alt+ctrl+p`    |
+| Quick Open at current directory | `ctrl+cmd+p` | `ctrl+ctrl+p`   |
 
 You can rebind either command in **Preferences: Open Keyboard Shortcuts** by searching for `pathlet`.

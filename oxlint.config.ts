@@ -1,28 +1,33 @@
-import { defineConfig } from "oxlint";
+import { defineConfig } from 'oxlint';
 
 export default defineConfig({
-	plugins: ["typescript", "unicorn", "oxc", "promise"],
+	plugins: ['typescript', 'unicorn', 'oxc', 'promise'],
 	categories: {
-		correctness: "error",
-		style: "warn"
+		correctness: 'error',
+		perf: 'warn',
+		style: 'warn'
 	},
 	rules: {
-		"sort-imports": "off",
-		"no-magic-numbers": "off",
-		"sort-keys": "off",
-		"max-statements": "off",
-		"id-length": "off",
-		"capitalized-comments": "off",
-		"eslint/func-style": "off",
-		"eslint/no-ternary": "off",
-		"unicorn/no-null": "off",
-		"eslint/guard-for-in": "off",
-		"eslint/curly": "off",
-		"eslint/max-params": ["off", { max: 5 } ]
+		'sort-imports': 'off',
+		'no-magic-numbers': 'off',
+		'sort-keys': 'off',
+		'max-statements': 'off',
+		'id-length': 'off',
+		'capitalized-comments': 'off',
+		'eslint/func-style': 'off',
+		'eslint/no-ternary': 'off',
+		'unicorn/no-null': 'off',
+		'eslint/guard-for-in': 'off',
+		'eslint/curly': 'off',
+		'eslint/max-params': ['off', { max: 5 }]
 	},
 	env: {
 		builtin: true
 	},
+	options: {
+		typeAware: true,
+		typeCheck: true
+	},
 	settings: {},
-	ignorePatterns: ["node_modules", "out", "*.lock", "dist"]
+	ignorePatterns: ['node_modules', 'out', 'dist']
 });

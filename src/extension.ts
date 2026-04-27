@@ -1,23 +1,23 @@
-import path from "node:path";
+import path from 'node:path';
 
-import * as vscode from "vscode";
+import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
-		vscode.commands.registerCommand("pathlet.opened", async () => {
-			vscode.commands.executeCommand("workbench.action.quickOpen", "edt ");
+		vscode.commands.registerCommand('pathlet.opened', async () => {
+			vscode.commands.executeCommand('workbench.action.quickOpen', 'edt ');
 		}),
 
-		vscode.commands.registerCommand("pathlet.pwd", async () => {
+		vscode.commands.registerCommand('pathlet.pwd', async () => {
 			const editor = vscode.window.activeTextEditor;
 
-			let p = "";
+			let p = '';
 			if (editor) {
 				const filePath = vscode.workspace.asRelativePath(editor.document.uri, false);
 				p = path.dirname(filePath);
 			}
 
-			vscode.commands.executeCommand("workbench.action.quickOpen", p === "." ? "" : p);
+			vscode.commands.executeCommand('workbench.action.quickOpen', p === '.' ? '' : p);
 		})
 	);
 }
