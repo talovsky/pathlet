@@ -1,33 +1,39 @@
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
-	plugins: ['typescript', 'unicorn', 'oxc', 'promise'],
+	plugins: ['eslint', 'typescript', 'unicorn', 'promise', 'import'],
 	categories: {
 		correctness: 'error',
-		perf: 'warn',
+		suspicious: 'error',
+		perf: 'error',
+		restriction: 'error',
 		style: 'warn'
-	},
-	rules: {
-		'sort-imports': 'off',
-		'no-magic-numbers': 'off',
-		'sort-keys': 'off',
-		'max-statements': 'off',
-		'id-length': 'off',
-		'capitalized-comments': 'off',
-		'eslint/func-style': 'off',
-		'eslint/no-ternary': 'off',
-		'unicorn/no-null': 'off',
-		'eslint/guard-for-in': 'off',
-		'eslint/curly': 'off',
-		'eslint/max-params': ['off', { max: 5 }]
-	},
-	env: {
-		builtin: true
 	},
 	options: {
 		typeAware: true,
 		typeCheck: true
 	},
-	settings: {},
-	ignorePatterns: ['node_modules', 'out', 'dist']
+	rules: {
+		'unicorn/catch-error-name': ['error', { name: 'err' }],
+		'unicorn/expiring-todo-comments': 'off',
+		'unicorn/filename-case': ['error', { case: 'kebabCase' }],
+		'unicorn/import-style': 'off',
+		'unicorn/isolated-functions': 'off',
+		'unicorn/no-nested-ternary': 'off',
+		'unicorn/no-null': 'off',
+		'no-unused-properties': 'error',
+
+		'no-magic-numbers': 'off',
+		'sort-keys': 'off',
+		'max-statements': 'off',
+		'id-length': 'off',
+		'capitalized-comments': 'off',
+		'func-style': 'off',
+		'max-params': ['error', { max: 6 }],
+		'no-empty': ['error', { allowEmptyCatch: true }]
+	},
+	env: {
+		builtin: true
+	},
+	ignorePatterns: ['node_modules', 'out', 'dist', '**/fixtures/**/*']
 });

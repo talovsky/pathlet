@@ -1,7 +1,7 @@
 import path from 'node:path';
 
 import * as vscode from 'vscode';
-
+console.log('Congratulations, your extension "pathlet" is now active!');
 export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
 		vscode.commands.registerCommand('pathlet.opened', async () => {
