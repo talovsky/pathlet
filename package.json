@@ -9,27 +9,39 @@
 	"author": {
 		"name": "talovsky"
 	},
-	"type": "module",
-	"main": "./out/extension.js",
-	"publisher": "talovsky",
-		"repository": {
+	"repository": {
 		"type": "git",
 		"url": "https://github.com/talovsky/pathlet.git"
 	},
-	"icon": "./pathlet.png",
-
+	"publisher": "talovsky",
+	"type": "module",
+	"main": "./out/extension.js",
 	"scripts": {
 		"vscode:prepublish": "bun run build",
 		"build": "rm -rf out && tsc -p ./",
 		"watch": "tsc -p ./ --watch",
-		"lint": "oxfmt && oxlint"
+		"lint": "oxfmt && oxlint",
+		"prepare": "husky",
+		"typecheck": "tsc tsconfig.json --noEmit"
 	},
 	"devDependencies": {
 		"@types/node": "^25.6.0",
 		"@types/vscode": "^1.100.0",
+		"husky": "^9.1.7",
+		"nano-staged": "^1.0.2",
 		"oxfmt": "^0.46.0",
 		"oxlint": "^1.61.0",
+		"oxlint-tsgolint": "^0.22.0",
 		"typescript": "^6"
+	},
+	"nano-staged": {
+		"*.ts": [
+			"oxfmt",
+			"oxlint"
+		],
+		"*.{md,json}": [
+			"oxfmt"
+		]
 	},
 	"contributes": {
 		"commands": [
@@ -56,6 +68,7 @@
 		]
 	},
 	"activationEvents": [],
+	"icon": "./pathlet.png",
 	"engines": {
 		"vscode": "^1.100.0"
 	}
